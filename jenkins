@@ -50,15 +50,13 @@ pipeline{
                 
             }
         }
-        // stage("Quality gate status"){
-        //     steps{ 
-        //         script{
-        //             sh 'mvn clean install'
-                    
-        //         }   
-                
-        //     }
-        // }
+        stage("Quality gate status"){
+            steps{ 
+                script{
+                    waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api'   
+                }       
+            }
+        }
         // stage("Upload war file to nexus"){
         //     steps{ 
         //         script{
