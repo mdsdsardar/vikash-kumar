@@ -36,15 +36,20 @@ pipeline{
                 sh 'mvn clean install'
             }
         }
-        // stage("SonarQube analysis"){
-        //     steps{ 
-        //         script{
-        //             sh 'mvn clean install'
+        stage("SonarQube analysis"){
+            tools {
+                maven 'Maven'
+            }
+            steps{ 
+                script{
+                    withSonarQubeEnv(credentialsId: 'sonar-api') {
+                        sh 'mvn clean package sonar:sonar'
+                    }
                     
-        //         }   
+                }   
                 
-        //     }
-        // }
+            }
+        }
         // stage("Quality gate status"){
         //     steps{ 
         //         script{
