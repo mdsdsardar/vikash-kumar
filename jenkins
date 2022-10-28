@@ -36,26 +36,26 @@ pipeline{
                 sh 'mvn clean install'
             }
         }
-        stage("SonarQube analysis"){
-            tools {
-                maven 'Maven'
-            }
-            steps{ 
-                script{
-                    sh 'mvn clean package sonar:sonar'
-                    sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=12345'
+        // stage("SonarQube analysis"){
+        //     tools {
+        //         maven 'Maven'
+        //     }
+        //     steps{ 
+        //         script{
+        //             sh 'mvn clean package sonar:sonar'
+        //             sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=12345'
                         
-                }   
+        //         }   
                 
-            }
-        }
-        stage("Quality gate status"){
-            steps{ 
-                script{
-                    waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api'   
-                }       
-            }
-        }
+        //     }
+        // }
+        // stage("Quality gate status"){
+        //     steps{ 
+        //         script{
+        //             waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api'   
+        //         }       
+        //     }
+        // }
         // stage("Upload war file to nexus"){
         //     steps{ 
         //         script{
