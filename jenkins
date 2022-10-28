@@ -70,7 +70,7 @@ pipeline{
                     credentialsId: 'nexus', 
                     groupId: 'com.example', nexusUrl: '3.110.130.28:8081', 
                     nexusVersion: 'nexus3', protocol: 'http', 
-                    repository: 'maven-releases', version: '1.0.0'
+                    repository: 'demoapp-release', version: '1.0.0'
                     
                 }   
                 
