@@ -39,7 +39,7 @@ pipeline{
         stage("SonarQube analysis"){
             tools {
                 maven 'Maven'
-                hudson.plugins.sonar.SonarRunnerInstallation 'SonarQube Scanner'
+                hudson.plugins.sonar.SonarRunnerInstallation 
             }
             steps{ 
                 script{
