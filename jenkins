@@ -6,11 +6,15 @@ pipeline{
                 git branch: 'main', url: 'https://github.com/mdsdsardar/vikash-kumar.git'
             }
         }
-        tools {
-        maven 'apache-maven-3.8.6' 
-        }
+        // tools {
+        // maven 'apache-maven-3.8.6' 
+        // }
 
         stage("Unit Testing"){
+            tools {
+                maven 'apache-maven-3.8.6' 
+            }
+
             steps{    
                 sh 'mvn test'
             }
