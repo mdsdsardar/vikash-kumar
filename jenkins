@@ -64,15 +64,15 @@ pipeline{
                     [
                         [
                             artifactId: 'springboot', classifier: '', 
-                            file: 'target/Uber.jar', type: 'jar'
+                            file: 'target/Uber-1.0.0.jar', type: 'jar'
                             ]
                     ],
                     credentialsId: 'trying', 
                     groupId: 'com.example', 
-                    nexusUrl: '3.110.130.28:8081', 
+                    nexusUrl: '172.31.33.191:8081', 
                     nexusVersion: 'nexus3', 
                     protocol: 'http', 
-                    repository: 'demoapp-release', 
+                    repository: 'http://15.206.66.71:8081/repository/demoapp-release/', 
                     version: '1.0.0'
                     
                 }   
