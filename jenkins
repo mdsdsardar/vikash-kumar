@@ -1,0 +1,55 @@
+pipeline{
+    agent any 
+    stages{
+        stage("Github automation"){
+            steps{    
+                git branch: 'main', url: 'https://github.com/mdsdsardar/vikash-kumar.git'
+            }
+        }
+        // stage("Unit Testing"){
+        //     steps{    
+        //         sh 'mvn test'
+        //     }
+        // }
+        // stage("Integratin Testing"){
+        //     steps{    
+        //         sh 'mvn varify -DskipUnitTests'
+        //     }
+        // }
+        // stage("Maven Build"){
+        //     steps{    
+        //         sh 'mvn clean install'
+        //     }
+        // }
+        // stage("SonarQube analysis"){
+        //     steps{ 
+        //         script{
+        //             sh 'mvn clean install'
+                    
+        //         }   
+                
+        //     }
+        // }
+        // stage("Quality gate status"){
+        //     steps{ 
+        //         script{
+        //             sh 'mvn clean install'
+                    
+        //         }   
+                
+        //     }
+        // }
+        // stage("Upload war file to nexus"){
+        //     steps{ 
+        //         script{
+        //             sh 'mvn clean install'
+                    
+        //         }   
+                
+        //     }
+        // }
+
+}
+
+
+//if you dont know how to write pipeline syntax, goto pipeline syntax from there you can get the syntax.
