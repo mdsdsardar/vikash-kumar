@@ -36,20 +36,20 @@ pipeline{
                 sh 'mvn clean install'
             }
         }
-        stage("SonarQube analysis"){
-            tools {
-                maven 'Maven'
-                hudson.plugins.sonar.SonarRunnerInstallation 
-            }
-            steps{ 
-                script{
-                    sh 'mvn clean package sonar:sonar'
-                    sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=12345'
+        // stage("SonarQube analysis"){
+        //     tools {
+        //         maven 'Maven'
+        //         hudson.plugins.sonar.SonarRunnerInstallation 
+        //     }
+        //     steps{ 
+        //         script{
+        //             sh 'mvn clean package sonar:sonar'
+        //             sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=12345'
                         
-                }   
+        //         }   
                 
-            }
-        }
+        //     }
+        // }
         // stage("Quality gate status"){
         //     steps{ 
         //         script{
