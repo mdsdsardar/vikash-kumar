@@ -49,7 +49,7 @@ pipeline{
                 }   
                 
             }
-        // }
+        }
         // stage("Quality gate status"){
         //     steps{ 
         //         script{
