@@ -12,7 +12,7 @@ pipeline{
 
         stage("Unit Testing"){
             tools {
-                maven 'apache-maven-3.8.6' 
+                maven 'Maven' 
             }
 
             steps{    
