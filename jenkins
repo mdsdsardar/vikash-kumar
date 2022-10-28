@@ -18,17 +18,24 @@ pipeline{
             steps{    
                 sh 'mvn test'
             }
+            
         }
-        // stage("Integratin Testing"){
-        //     steps{    
-        //         sh 'mvn varify -DskipUnitTests'
-        //     }
-        // }
-        // stage("Maven Build"){
-        //     steps{    
-        //         sh 'mvn clean install'
-        //     }
-        // }
+        stage("Integratin Testing"){
+            tools {
+                maven 'Maven' 
+            }
+            steps{    
+                sh 'mvn varify -DskipUnitTests'
+            }
+        }
+        stage("Maven Build"){
+            tools {
+                maven 'Maven' 
+            }
+            steps{    
+                sh 'mvn clean install'
+            }
+        }
         // stage("SonarQube analysis"){
         //     steps{ 
         //         script{
