@@ -42,10 +42,9 @@ pipeline{
             }
             steps{ 
                 script{
-                    withSonarQubeEnv(credentialsId: 'new') {
-                        sh 'mvn clean package sonar:sonar'
-                    }
-                    
+                    sh 'mvn clean package sonar:sonar'
+                    mvn sonar:sonar -Dsonar.login=squ_9cb59b718c58823e86353a732fb04e2dbd197a6b
+                        
                 }   
                 
             }
