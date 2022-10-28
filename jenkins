@@ -43,7 +43,7 @@ pipeline{
             steps{ 
                 script{
                     sh 'mvn clean package sonar:sonar'
-                    sh 'mvn sonar:sonar -Dsonar.login=squ_9cb59b718c58823e86353a732fb04e2dbd197a6b'
+                    sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=12345'
                         
                 }   
                 
