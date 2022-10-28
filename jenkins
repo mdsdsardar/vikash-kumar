@@ -6,12 +6,12 @@ pipeline{
                 git branch: 'main', url: 'https://github.com/mdsdsardar/vikash-kumar.git'
             }
         }
-    }
-        // stage("Unit Testing"){
-        //     steps{    
-        //         sh 'mvn test'
-        //     }
-        // }
+    
+        stage("Unit Testing"){
+            steps{    
+                sh 'mvn test'
+            }
+        }
         // stage("Integratin Testing"){
         //     steps{    
         //         sh 'mvn varify -DskipUnitTests'
@@ -49,8 +49,6 @@ pipeline{
                 
         //     }
         // }
-
+    }
 }
-
-
 //if you dont know how to write pipeline syntax, goto pipeline syntax from there you can get the syntax.
