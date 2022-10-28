@@ -25,7 +25,7 @@ pipeline{
                 maven 'Maven' 
             }
             steps{    
-                sh 'mvn varify -DskipUnitTests'
+                sh 'mvn verify -DskipUnitTests'
             }
         }
         stage("Maven Build"){
