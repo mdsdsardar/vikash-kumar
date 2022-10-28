@@ -56,15 +56,26 @@ pipeline{
         //         }       
         //     }
         // }
-        // stage("Upload war file to nexus"){
-        //     steps{ 
-        //         script{
-        //             sh 'mvn clean install'
+        stage("Upload war file to nexus"){
+            steps{ 
+                script{
+                    nexusArtifactUploader artifacts: 
+                    [
+                        [
+                            artifactId: 'springboot', 
+                            classifier: '', file: 'target/Uber.jar', 
+                            type: 'jar'
+                            ]
+                    ], 
+                    credentialsId: 'nexus', 
+                    groupId: 'com.example', nexusUrl: '3.110.130.28:8081', 
+                    nexusVersion: 'nexus3', protocol: 'http', 
+                    repository: 'maven-releases', version: '1.0.0'
                     
-        //         }   
+                }   
                 
-        //     }
-        // }
+            }
+        }
     }
 }
 //if you dont know how to write pipeline syntax, goto pipeline syntax from there you can get the syntax.
