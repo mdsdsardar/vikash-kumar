@@ -64,7 +64,7 @@ pipeline{
                     [
                         [
                             artifactId: 'springboot', classifier: '', 
-                            file: 'target/Uber.jar', type: 'jar'
+                            file: 'target/springboot-1.0.0.jar', type: 'jar'
                             ]
                     ],
                     credentialsId: 'nexus3', 
@@ -72,7 +72,7 @@ pipeline{
                     nexusUrl: '172.31.33.191:8081', 
                     nexusVersion: 'nexus3', 
                     protocol: 'http', 
-                    repository: 'http://65.2.38.7:8081/repository/demoapp-release', 
+                    repository: 'http://172.31.33.191:8081/repository/demoapp-release', 
                     version: '1.0.0'
                     
                 }   
