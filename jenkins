@@ -69,10 +69,10 @@ pipeline{
                     ],
                     credentialsId: 'nexus3', 
                     groupId: 'com.example', 
-                    nexusUrl: '65.2.38.7:8081', 
+                    nexusUrl: '172.31.33.191:8081', 
                     nexusVersion: 'nexus3', 
                     protocol: 'http', 
-                    repository: 'http://65.2.38.7:8081/repository/demoapp-release', 
+                    repository: 'demoapp-release', 
                     version: '1.0.0'
                     
                 }   
