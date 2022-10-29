@@ -51,13 +51,13 @@ pipeline{
                 
             }
         }
-        stage("Quality gate status"){
-            steps{ 
-                script{
-                    waitForQualityGate abortPipeline: false, credentialsId: 'saadissad'   
-                }       
-            }
-        }
+        // stage("Quality gate status"){
+        //     steps{ 
+        //         script{
+        //             waitForQualityGate abortPipeline: false, credentialsId: 'saadissad'   
+        //         }       
+        //     }
+        // }
         stage("Upload war file to nexus"){
             steps{ 
                 script{
